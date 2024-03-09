@@ -1,0 +1,46 @@
+.btnJoin, .info, .nav-link, .btnNavbar {
+    color: #000;
+    font-weight: 600;
+}
+
+.title {
+    color: #000;
+    font-weight: bolder;
+}
+
+.logo {
+    width: 80px;
+    height: 52px;
+}
+
+.hide-navigation-item {
+    display: none !important;
+}
+
+.nav-item {
+    margin-right: 80px;
+}
+
+@media only screen and (min-width: 992px) {
+    .btnNavbar {
+        display: none !important;
+    }
+    .dot {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .btnJoin {
+        display: none !important;
+    }
+    .nav-item {
+        margin-right: 0px;
+        text-align: center;
+        padding: 2px;
+        margin-left: 14px;
+    }
+    /* .title {
+        margin-left: -12px;
+    } */
+}

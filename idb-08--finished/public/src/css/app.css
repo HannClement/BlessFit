@@ -5,3 +5,32 @@
 .drawer-option {
   padding: 16px;
 }
+
+.logo {
+  width: 48px;
+  height: auto;
+}
+
+.mdl-layout-title {
+  margin-right: 10px;
+  color: black;
+  font-weight: bolder;
+}
+
+.mdl-layout__header {
+  background-color: #fff;
+}
+
+.material-icons {
+  color: #000 !important;
+}
+
+.mdl-navigation__link {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.mdl-button {
+  border-radius: 15px;
+  stroke: #000;
+}
