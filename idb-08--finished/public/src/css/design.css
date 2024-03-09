@@ -3,6 +3,11 @@
     font-weight: 600;
 }
 
+.btn:hover {
+    background-color: #FF0000;
+    color: #fff;
+}
+
 .title {
     color: #000;
     font-weight: bolder;
@@ -40,7 +45,4 @@
         padding: 2px;
         margin-left: 14px;
     }
-    /* .title {
-        margin-left: -12px;
-    } */
 }
