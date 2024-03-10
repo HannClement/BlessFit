@@ -63,12 +63,6 @@
     column-gap: 4px;
 }
 
-.symmetrical {
-    padding-top: 8px;
-    margin-right: 10px;
-    font-size: 12px;
-}
-
 .imgFit {
     object-fit: fill;
     width: 100%;
