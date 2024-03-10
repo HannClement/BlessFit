@@ -1,3 +1,7 @@
+body {
+    background-color: #fffaed;
+}
+
 .btnJoin, .info, .nav-link, .btnNavbar {
     color: #000;
     font-weight: 600;
