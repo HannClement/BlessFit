@@ -1,56 +1,3 @@
-// var shareImageButton = document.querySelector('#share-image-button');
-// var createPostArea = document.querySelector('#create-post');
-// var closeCreatePostModalButton = document.querySelector('#close-create-post-modal-btn');
-// var sharedMomentsArea = document.querySelector('#shared-moments');
-
-// function openCreatePostModal() {
-//   createPostArea.style.display = 'block';
-//   if (deferredPrompt) {
-//     deferredPrompt.prompt();
-
-//     deferredPrompt.userChoice.then(function(choiceResult) {
-//       console.log(choiceResult.outcome);
-
-//       if (choiceResult.outcome === 'dismissed') {
-//         console.log('User cancelled installation');
-//       } else {
-//         console.log('User added to home screen');
-//       }
-//     });
-
-//     deferredPrompt = null;
-//   }
-
-  // if ('serviceWorker' in navigator) {
-  //   navigator.serviceWorker.getRegistrations()
-  //     .then(function(registrations) {
-  //       for (var i = 0; i < registrations.length; i++) {
-  //         registrations[i].unregister();
-  //       }
-  //     })
-  // }
-// }
-
-// function closeCreatePostModal() {
-//   createPostArea.style.display = 'none';
-// }
-
-// shareImageButton.addEventListener('click', openCreatePostModal);
-
-// closeCreatePostModalButton.addEventListener('click', closeCreatePostModal);
-
-// Currently not in use, allows to save assets in cache on demand otherwise
-// function onSaveButtonClicked(event) {
-//   console.log('clicked');
-//   if ('caches' in window) {
-//     caches.open('user-requested')
-//       .then(function(cache) {
-//         cache.add('https://httpbin.org/get');
-//         cache.add('/src/images/sf-boat.jpg');
-//       });
-//   }
-// }
-
 function clearCards() {
   var dataCardsElement = document.getElementById('dataCards');
   dataCardsElement.innerHTML = "";
@@ -81,16 +28,19 @@ function createCard(data) {
     var cardText = document.createElement('div');
     cardText.className = 'card-img-overlay fw-bolder';
 
+    var linkPage = document.createElement('a');
+    linkPage.href = 'detail.html?id=' + data[i].id;
+
     var cardTitle = document.createElement('h4');
     cardTitle.className = 'card-title position-absolute bottom-0 start-1 text-white';
     cardTitle.textContent = data[i].title;
     cardText.appendChild(cardTitle);
 
-    card.appendChild(cardText);
+    linkPage.appendChild(cardText);
+    card.appendChild(linkPage);
     classKedua.appendChild(card);
     classPertama.appendChild(classKedua);
   }
-
   document.getElementById('dataCards').appendChild(classPertama);
 }
 
@@ -120,7 +70,7 @@ fetch(url)
   });
 
   if ('indexedDB' in window) {
-    readAllData('posts')
+    readAllData('trainings')
     .then(function(data) {
       if (!networkDataReceived) {
         console.log('From cache', data);
