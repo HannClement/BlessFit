@@ -38,7 +38,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom mb-3">
     <div class="container-fluid">
       <img src="/src/images/logo_gym.png" class="logo" alt="logo">
-      <a class="navbar-brand title" href="#">BlessFit</a>
+      <a class="navbar-brand title" href="index.html">BlessFit</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,19 +46,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto me-auto">
           <div class="d-flex justify-content-center">
-            <li class="nav-item">
+            <li class="nav-item pb-2">
               <div class="d-flex">
                 <img src="src/images/icons/dot.svg" class="dot" alt="Dot">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="offline.html">About</a>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pb-2">
               <div class="d-flex">
                 <img src="src/images/icons/dot.svg" class="dot" alt="Dot">
                 <a class="nav-link" href="#">Trainings</a>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item pb-2">
               <div class="d-flex">
                 <img src="src/images/icons/dot.svg" class="dot" alt="Dot">
                 <a class="nav-link" href="#">Contacts</a>
@@ -73,7 +73,7 @@
   </nav>
   
   <!-- Main -->
-  <div class="container-fluid">
+  <div class="container-fluid mt-4">
     <div class="row d-flex justify-content-center">
       <div class="col-6 d-flex justify-content-end mx-auto">
         <div class="row justify-content-end">
@@ -84,7 +84,7 @@
               <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</span>
             </div>
           </div>
-          <div class="d-flex justify-content-end">
+          <div class="d-flex justify-content-end pt-2">
             <button class="btn btn-danger btnSize btn-sm text-center">
               Get Started
             </button>
@@ -144,33 +144,44 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-10 mx-auto mb-2">
+    <div class="row px-4" id="dataCards">
+      <div class="col-10 d-flex mx-auto mb-2 justify-content-center spacingColumn">
+        <div class="col-6">
+          <div class="card">
+            <img src="" class="rounded imgFit" alt="">
+            <div class="card-img-overlay fw-bolder">
+              <h4 class="card-title position-absolute bottom-0 start-1 text-white"></h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-6">
+          <div class="card">
+            <img src="" class="rounded imgFit" alt="">
+            <div class="card-img-overlay fw-bolder">
+              <h4 class="card-title position-absolute bottom-0 start-1 text-white"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="col-10 mx-auto mb-2">
         <div class="card">
-          <img src="src/images/poster_gym.png" class="rounded imgFit" alt="Trainings">
+          <img src="src/images/pushup.png" class="rounded imgFit" alt="Trainings">
           <div class="card-img-overlay">
-            <h4 class="card-title position-absolute bottom-0 start-1 text-white">Running</h4>
+            <h4 class="card-title position-absolute bottom-0 start-1 text-white">Push Up</h4>
           </div>
         </div>
       </div>
 
       <div class="col-10 mx-auto mb-2">
         <div class="card">
-          <img src="src/images/poster_gym.png" class="rounded imgFit" alt="Trainings">
+          <img src="src/images/cycling.png" class="rounded imgFit" alt="Trainings">
           <div class="card-img-overlay">
-            <h4 class="card-title position-absolute bottom-0 start-1 text-white">Body Building</h4>
+            <h4 class="card-title position-absolute bottom-0 start-1 text-white">Cycling</h4>
           </div>
         </div>
-      </div>
-
-      <div class="col-10 mx-auto mb-2">
-        <div class="card">
-          <img src="src/images/poster_gym.png" class="rounded imgFit" alt="Trainings">
-          <div class="card-img-overlay">
-            <h4 class="card-title position-absolute bottom-0 start-1 text-white">Classic Yoga</h4>
-          </div>
-        </div>
-      </div>
+      </div> -->
     </div>
   </div>
 

@@ -8,13 +8,15 @@ var STATIC_FILES = [
   '/index.html',
   '/offline.html',
   '/src/js/app.js',
-  '/src/js/feed.js',
+  '/src/js/feed.js',  
   '/src/js/idb.js',
   '/src/js/promise.js',
   '/src/js/fetch.js',
   '/src/js/material.min.js',
   '/src/css/app.css',
   '/src/css/feed.css',
+  '/src/css/design.css',
+  '/src/bootstrap-5.2.3-dist/css/bootstrap.css',
   'https://fonts.googleapis.com/css?family=Roboto:400,700',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css'
@@ -73,18 +75,18 @@ function isInArray(string, array) {
 
 self.addEventListener('fetch', function (event) {
 
-  var url = 'https://pwagram-99adf.firebaseio.com/posts';
+  var url = 'https://ambwtes1clement-default-rtdb.firebaseio.com/trainings';
   if (event.request.url.indexOf(url) > -1) {
     event.respondWith(fetch(event.request)
       .then(function (res) {
         var clonedRes = res.clone();
-        clearAllData('posts')
+        clearAllData('trainings')
           .then(function () {
             return clonedRes.json();
           })
           .then(function (data) {
             for (var key in data) {
-              writeData('posts', data[key])
+              writeData('trainings', data[key])
             }
           });
         return res;
