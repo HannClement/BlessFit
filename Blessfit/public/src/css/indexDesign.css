@@ -3,6 +3,10 @@
     font-weight: 600;
 }
 
+button:hover {
+    transform: translateY(-6px);
+}
+
 .title {
     color: #000;
     font-weight: bolder;
@@ -70,12 +74,14 @@
     max-height: 200px;
     min-height: 150px;
 }
+    
+.card:hover {
+    transform: scale(0.8);
+    transition: transform 1s ease;
+}
 
 @media only screen and (min-width: 992px) {
-    .btnNavbar {
-        display: none !important;
-    }
-    .dot {
+    .btnNavbar, .dot {
         display: none !important;
     }
 }
@@ -95,8 +101,9 @@
     }
 }
 
-@media only screen and (max-width: 510px) {
-    .infoEdit {
-        padding-bottom: 10px;
+@media only screen and (min-width: 575px) and (max-width: 1025px) {
+    .img-fluid {
+        width: 70%;
+        height: auto;
     }
 }
