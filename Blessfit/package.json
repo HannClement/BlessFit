@@ -1,7 +1,7 @@
 {
-  "name": "pwa-complete-guide",
+  "name": "pwa-fitness",
   "version": "1.0.0",
-  "description": "A complete guide to PWAs. Building a simple Instagram clone.",
+  "description": "PWA BlessFit.",
   "main": "index.js",
   "scripts": {
     "start": "http-server -c-1"
