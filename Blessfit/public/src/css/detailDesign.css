@@ -3,7 +3,7 @@
     font-weight: 600;
 }
 
-button:hover {
+.btnHover:hover {
     transform: translateY(-6px);
 }
 

@@ -18,6 +18,7 @@ var STATIC_FILES = [
   '/src/css/feed.css',
   '/src/css/indexDesign.css',
   '/src/css/offlineDesign.css',
+  '/src/css/detailDesign.css',
   '/src/bootstrap-5.2.3-dist/css/bootstrap.css',
   'https://fonts.googleapis.com/css?family=Roboto:400,700',
   'https://fonts.googleapis.com/icon?family=Material+Icons',

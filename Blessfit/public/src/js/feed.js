@@ -22,9 +22,8 @@ function createCard(data) {
 
     card.addEventListener('click', function(event) {
       var clickedId = data[i].id;
-        window.location.href = 'detail.html?id=' + clickedId;
+      window.location.href = 'detail.html?id=' + clickedId;
     });
-    
 
     var linkPage = document.createElement('a');
     linkPage.href = 'detail.html?id=' + data[i].id;
@@ -50,20 +49,59 @@ function createCard(data) {
   document.getElementById('dataCards').appendChild(classPertama);
 }
 
+
 function updateUI(data) {
   clearCards();
   createCard(data);
 }
+
+var url = 'https://ambwtes1clement-default-rtdb.firebaseio.com/trainings.json';
+var networkDataReceived = false;
 
 if (window.location.pathname.includes('detail.html')) {
   var urlParams = new URLSearchParams(window.location.search);
   var detailId = urlParams.get('id');
 
   console.log('Detail ID:', detailId);
-}
 
-var url = 'https://ambwtes1clement-default-rtdb.firebaseio.com/trainings.json';
-var networkDataReceived = false;
+  if (detailId) {
+    fetch(url)
+    .then(function(res) {
+      return res.json();
+    })
+    .then(function(data) {
+        const post = data[detailId];
+        if (post) {
+          document.getElementById('detailTitle').textContent = post.title;
+          document.getElementById('detailImage').src = post.image;
+          document.getElementById('detailDesc').textContent = post.desc;
+          document.getElementById('details').textContent = post.details;
+        } else {
+          console.error('Data tidak ditemukan.');
+        }
+    });
+    if ('indexedDB' in window) {
+      readAllData('trainings')
+        .then(function(data) {
+          if (!networkDataReceived) {
+            console.log('From cache', data);
+            const post = data[detailId];
+        if (post) {
+          document.getElementById('detailTitle').textContent = post.title;
+          document.getElementById('detailImage').src = post.image;
+          document.getElementById('detailDesc').textContent = post.desc;
+          document.getElementById('details').textContent = post.details;
+        } else {
+          console.error('Data tidak ditemukan.');
+        }
+          }
+        })
+        .catch(function(error) {
+          console.error('Error reading data from cache:', error);
+        });
+    }
+  }
+}
 
 fetch(url)
   .then(function(res) {
@@ -82,8 +120,8 @@ fetch(url)
     console.error('Error fetching data from web:', error);
   });
 
-  if ('indexedDB' in window) {
-    readAllData('trainings')
+if ('indexedDB' in window) {
+  readAllData('trainings')
     .then(function(data) {
       if (!networkDataReceived) {
         console.log('From cache', data);
@@ -91,6 +129,6 @@ fetch(url)
       }
     })
     .catch(function(error) {
-    console.error('Error reading data from cache:', error);
-  });
+      console.error('Error reading data from cache:', error);
+    });
 }
