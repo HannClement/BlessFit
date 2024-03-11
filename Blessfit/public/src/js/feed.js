@@ -20,16 +20,22 @@ function createCard(data) {
     var card = document.createElement('div');
     card.className = 'card';
 
-    var cardImage = document.createElement('img');
-    cardImage.src = data[i].image;
-    cardImage.className = 'rounded imgFit';
-    card.appendChild(cardImage);
-
-    var cardText = document.createElement('div');
-    cardText.className = 'card-img-overlay fw-bolder';
+    card.addEventListener('click', function(event) {
+      var clickedId = data[i].id;
+        window.location.href = 'detail.html?id=' + clickedId;
+    });
+    
 
     var linkPage = document.createElement('a');
     linkPage.href = 'detail.html?id=' + data[i].id;
+
+    var cardImage = document.createElement('img');
+    cardImage.src = data[i].image;
+    cardImage.className = 'rounded imgFit';
+    linkPage.appendChild(cardImage);
+
+    var cardText = document.createElement('div');
+    cardText.className = 'card-img-overlay fw-bolder';
 
     var cardTitle = document.createElement('h4');
     cardTitle.className = 'card-title position-absolute bottom-0 start-1 text-white';
@@ -47,6 +53,13 @@ function createCard(data) {
 function updateUI(data) {
   clearCards();
   createCard(data);
+}
+
+if (window.location.pathname.includes('detail.html')) {
+  var urlParams = new URLSearchParams(window.location.search);
+  var detailId = urlParams.get('id');
+
+  console.log('Detail ID:', detailId);
 }
 
 var url = 'https://ambwtes1clement-default-rtdb.firebaseio.com/trainings.json';
