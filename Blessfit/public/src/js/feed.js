@@ -70,14 +70,14 @@ if (window.location.pathname.includes('detail.html')) {
       return res.json();
     })
     .then(function(data) {
-        const post = data[detailId];
-        if (post) {
-          document.getElementById('detailTitle').textContent = post.title;
-          document.getElementById('detailImage').src = post.image;
-          document.getElementById('detailDesc').textContent = post.desc;
-          document.getElementById('details').textContent = post.details;
+        var dataID = data[detailId];
+        if (dataID) {
+          document.getElementById('detailTitle').textContent = dataID.title;
+          document.getElementById('detailImage').src = dataID.image;
+          document.getElementById('detailDesc').textContent = dataID.desc;
+          document.getElementById('details').textContent = dataID.details;
         } else {
-          console.error('Data tidak ditemukan.');
+          console.error('Data Not Found');
         }
     });
     if ('indexedDB' in window) {
@@ -85,15 +85,15 @@ if (window.location.pathname.includes('detail.html')) {
         .then(function(data) {
           if (!networkDataReceived) {
             console.log('From cache', data);
-            const post = data[detailId];
-        if (post) {
-          document.getElementById('detailTitle').textContent = post.title;
-          document.getElementById('detailImage').src = post.image;
-          document.getElementById('detailDesc').textContent = post.desc;
-          document.getElementById('details').textContent = post.details;
-        } else {
-          console.error('Data tidak ditemukan.');
-        }
+            var dataID = data[detailId];
+            if (dataID) {
+              document.getElementById('detailTitle').textContent = dataID.title;
+              document.getElementById('detailImage').src = dataID.image;
+              document.getElementById('detailDesc').textContent = dataID.desc;
+              document.getElementById('details').textContent = dataID.details;
+            } else {
+              console.error('Data Not Found');
+            }
           }
         })
         .catch(function(error) {

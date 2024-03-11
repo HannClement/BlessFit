@@ -4,25 +4,47 @@ importScripts('/src/js/utility.js');
 var CACHE_STATIC_NAME = 'static-v18';
 var CACHE_DYNAMIC_NAME = 'dynamic-v2';
 var STATIC_FILES = [
+  // HTML
   '/',
   '/index.html',
   '/offline.html',
-  '/detail.html',
+  // JS
   '/src/js/app.js',
   '/src/js/feed.js',  
   '/src/js/idb.js',
   '/src/js/promise.js',
   '/src/js/fetch.js',
-  '/src/js/material.min.js',
-  '/src/css/app.css',
-  '/src/css/feed.css',
+  '/src/js/utility.js',
+  '/manifest.json',
+  // Images
+  '/src/images/sponsor_paypal.png',
+  '/src/images/sponsor_windows.png',
+  '/src/images/sponsor_solana.png',
+  '/src/images/sponsor_calvinklein.png',
+  '/src/images/poster_gym.png',
+  '/src/images/offline_panda.png',
+  '/src/images/logo_gym.png',
+  '/src/images/logo_attribute.png',
+  // CSS
   '/src/css/indexDesign.css',
   '/src/css/offlineDesign.css',
   '/src/css/detailDesign.css',
+  // Icons
+  '/src/images/icons/arrow-right-circle.svg',
+  '/src/images/icons/dot.svg',
+  '/src/images/icons/icon-72x72.png',
+  '/src/images/icons/icon-96x96.png',
+  '/src/images/icons/icon-128x128.png',
+  '/src/images/icons/icon-144x144.png',
+  '/src/images/icons/icon-152x152.png',
+  '/src/images/icons/icon-192x192.png',
+  '/src/images/icons/icon-384x384.png',
+  '/src/images/icons/icon-512x512.png',
+  // Bootstrap
   '/src/bootstrap-5.2.3-dist/css/bootstrap.css',
+  '/src/bootstrap-5.2.3-dist/js/bootstrap.js',
   'https://fonts.googleapis.com/css?family=Roboto:400,700',
-  'https://fonts.googleapis.com/icon?family=Material+Icons',
-  'https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css'
+  'https://fonts.googleapis.com/icon?family=Material+Icons'
 ];
 
 self.addEventListener('install', function (event) {
