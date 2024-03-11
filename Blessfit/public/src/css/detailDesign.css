@@ -30,6 +30,11 @@
     margin-top: 10px;
 }
 
+.img-fluid:hover {
+    border-radius:50%;
+    transition: 1s ease;
+}
+
 .dataTitle {
     font-size: 25px;
     font-weight: bolder;
