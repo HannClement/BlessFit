@@ -115,14 +115,14 @@ fetch(url)
       dataArray.push(data[key]);
     }
     clearAllData('trainings')
-      .then(function () {
-        return data;
-      })
-      .then(function (data) {
-        for (var key in data) {
-          writeData('trainings', data[key])
-        }
-      });
+  .then(function () {
+      return data;
+  })
+  .then(function (data) {
+    for (var key in data) {
+      writeData('trainings', data[key])
+    }
+  });
     updateUI(dataArray);
   })
   .catch(function(error) {
