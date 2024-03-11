@@ -8,13 +8,14 @@ var STATIC_FILES = [
   '/',
   '/index.html',
   '/offline.html',
-  // JS
+  // Js
   '/src/js/app.js',
   '/src/js/feed.js',  
   '/src/js/idb.js',
   '/src/js/promise.js',
   '/src/js/fetch.js',
   '/src/js/utility.js',
+  // Json
   '/manifest.json',
   // Images
   '/src/images/sponsor_paypal.png',
